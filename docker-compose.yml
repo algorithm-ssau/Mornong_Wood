@@ -13,8 +13,9 @@ services:
       - '27017-27019:27017-27019'
   client:
     container_name: morning_wood_client
-    dockerfile: Dockerfile
-    context: ./Morning-Wood-Client
+    build:
+      dockerfile: Dockerfile
+      context: ./Morning-Wood-Client
 
 volumes:
   dbdata:
