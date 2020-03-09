@@ -1,0 +1,3 @@
+[submodule "mw_temporary"]
+	path = mw_temporary
+	url = git@github.com:mkrptr/mw_temporary.git
