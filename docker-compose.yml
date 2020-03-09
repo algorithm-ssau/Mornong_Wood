@@ -13,6 +13,8 @@ services:
       - '27017-27019:27017-27019'
   client:
     container_name: morning_wood_client
+    volumes:
+      - ./public/images:/usr/share/nginx/html/static/images
     ports:
       - '80:80'
       - '443:443'
