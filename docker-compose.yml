@@ -1,0 +1,17 @@
+version: '3'
+services:
+  database:
+    container_name: morning_wood_mongo
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_DATABSE: morning_wood
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ^r5\kLYS^`}m2qjU
+    volumes:
+      - ./mongo:/data/db
+    ports:
+      - '27017-27019:27017-27019'
+volumes:
+  dbdata:
+
