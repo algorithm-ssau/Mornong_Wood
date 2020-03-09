@@ -1,0 +1,18 @@
+* Morning Wood
+Here goes the description... morning wood, yaddayadda
+
+* How to build and deploy
+** Prerequisites
+  - docker
+  - docker-compose that supports v3 configs
+** Deploy
+*** Clone this repo
+#+BEGIN_SRC bash
+git clone --recursive git@github.com:algorithm-ssau/Mornong_Wood.git
+#+END_SRC
+*** Build all containers
+#+BEGIN_SRC bash
+docker-compose up -d
+#+END_SRC
+After running the command above Morning Wood would be available at :80
+
