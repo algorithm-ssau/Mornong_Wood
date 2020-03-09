@@ -11,6 +11,11 @@ services:
       - ./mongo:/data/db
     ports:
       - '27017-27019:27017-27019'
+  client:
+    container_name: morning_wood_client
+    dockerfile: Dockerfile
+    context: ./Morning-Wood-Client
+
 volumes:
   dbdata:
 
