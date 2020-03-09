@@ -5,9 +5,9 @@ services:
     image: mongo
     restart: always
     environment:
-      MONGO_INITDB_DATABSE: morning_wood
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: ^r5\kLYS^`}m2qjU
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_DATABASE}
     volumes:
       - ./mongo:/data/db
     ports:
