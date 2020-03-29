@@ -1,3 +1,6 @@
 [submodule "Morning-Wood-Client"]
 	path = Morning-Wood-Client
 	url = git@github.com:mkrptr/Morning-Wood-Client.git
+[submodule "MorningWoodBackend"]
+	path = MorningWoodBackend
+	url = git@github.com:DimaScientist/MorningWoodBackend.git
