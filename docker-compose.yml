@@ -1,3 +1,5 @@
+---
+
 version: '3'
 services:
   database:
@@ -11,6 +13,7 @@ services:
       - ./mongo:/data/db
     ports:
       - '27017-27019:27017-27019'
+
   client:
     container_name: morning_wood_client
     volumes:
@@ -23,6 +26,17 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./Morning-Wood-Client
+
+  server:
+    container_name: morning_wood_backend
+    ports:
+      - '5000:5000'
+    networks:
+      - morning-wood-net
+    build:
+      dockerfile: Dockerfile
+      context: ./MorningWoodBackend
+
 
 volumes:
   dbdata:
