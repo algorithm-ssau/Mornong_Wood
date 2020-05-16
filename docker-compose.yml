@@ -23,6 +23,8 @@ services:
       - '443:443'
     networks:
       -  morning-wood-net
+    environment:
+      REACT_APP_API_URL: ${REACT_APP_API_URL}
     build:
       dockerfile: Dockerfile
       context: ./Morning-Wood-Client
