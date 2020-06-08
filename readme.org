@@ -1,18 +1,61 @@
 * Morning Wood
-Here goes the description... morning wood, yaddayadda
+
 
 * How to build and deploy
 ** Prerequisites
   - docker
-  - docker-compose that supports v3 configs
-** Deploy
+    - on Arch based systems
+      #+BEGIN_SRC bash
+      sudo pacman -S docker
+      #+END_SRC
+      
+    - on Debian based systems
+        - First, update your existing list of packages:
+          #+BEGIN_SRC bash
+          sudo apt update
+          #+END_SRC
+        - Next, install a few prerequisite packages which let apt use packages over HTTPS:
+          #+BEGIN_SRC bash
+          sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+          #+END_SRC
+        - Then add the GPG key for the official Docker repository to your system:
+          #+BEGIN_SRC bash
+          curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+          #+END_SRC
+        - Add the Docker repository to APT sources:
+          #+BEGIN_SRC bash
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+          #+END_SRC
+        - Next, update the package database with the Docker packages from the newly added repo:
+          #+BEGIN_SRC bash
+          sudo apt update
+          #+END_SRC
+        - Make sure you are about to install from the Docker repo instead of the default Debian repo:
+          #+BEGIN_SRC bash
+          apt-cache policy docker-ce
+          #+END_SRC
+        -  Finally, install Docker:
+          #+BEGIN_SRC bash
+          sudo apt install docker-ce
+          #+END_SRC
+  - docker-compose
+    - Run this command to download the current stable release of Docker Compose:
+      #+BEGIN_SRC bash
+      sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      #+END_SRC
+    - Apply executable permissions to the binary:
+      #+BEGIN_SRC bash
+      sudo chmod +x /usr/local/bin/docker-compose
+      #+END_SRC
+      
+** Building
 *** Clone this repo
-#+BEGIN_SRC bash
-git clone --recursive git@github.com:algorithm-ssau/Mornong_Wood.git
-#+END_SRC
+  #+BEGIN_SRC bash
+  git clone --recursive git@github.com:algorithm-ssau/Mornong_Wood.git
+  #+END_SRC
 *** Build all containers
-#+BEGIN_SRC bash
-docker-compose up -d
-#+END_SRC
-After running the command above Morning Wood would be available at :80
+  #+BEGIN_SRC bash
+  docker-compose up -d
+  #+END_SRC
+  After running the command above Morning Wood would be available at :80
 
